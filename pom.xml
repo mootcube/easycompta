@@ -16,11 +16,11 @@
 
   <dependencies>
     <!--dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency-->
+	<groupId>junit</groupId>
+	<artifactId>junit</artifactId>
+	<version>3.8.1</version>
+	<scope>test</scope>
+	</dependency-->
     <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
@@ -48,6 +48,27 @@
 	  <showWarnings>true</showWarnings>
 	  <executable>${env.JAVA_HOME}/bin/javac</executable>
 	  <fork>true</fork>
+	</configuration>
+      </plugin>
+      <plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+	<artifactId>maven-assembly-plugin</artifactId>
+	<!--version>2.3.2</version-->
+	<configuration>
+	  <source>1.7</source>
+	  <target>1.7</target>
+	  <showDeprecation>true</showDeprecation>
+	  <showWarnings>true</showWarnings>
+	  <executable>${env.JAVA_HOME}/bin/javac</executable>
+	  <fork>true</fork>
+	  <archive>
+            <manifest>
+              <mainClass>com.moot.easycompta.Main</mainClass>
+            </manifest>
+          </archive>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
 	</configuration>
       </plugin>
     </plugins>
