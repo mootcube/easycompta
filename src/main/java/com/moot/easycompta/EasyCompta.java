@@ -1,10 +1,10 @@
-package com.moot.app;
+package com.moot.easycompta;
 
 /**
  * Hello world!
  *
  */
-public class App 
+public class EasyCompta 
 {
     public static void main( String[] args )
     {
