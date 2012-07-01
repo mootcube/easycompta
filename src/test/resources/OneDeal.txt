@@ -1,1 +1,13 @@
-Deal:Mathieu.Chataigner|test,Starbucks,10
+Person:Mathieu,Chataigner
+PersonalAccount:Mathieu.Chataigner|test,8
+Vendor:StarbucksBuy,11
+Buy:Mathieu.Chataigner|test,StarbucksBuy,10
+
+Person:Moot,Cube
+PersonalAccount:Moot.Cube|test,5
+Vendor:StarbucksSell,11
+Sell:Moot.Cube|test,StarbucksSell,10
+
+PersonalAccount:Mathieu.Chataigner|cash,8
+PersonalAccount:Moot.Cube|cash,5
+Transfer:Mathieu.Chataigner|cash,Moot.Cube|cash,10

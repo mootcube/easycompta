@@ -1,13 +1,11 @@
 package com.moot.easycompta;
 
 /**
- * Hello world!
- *
+ * 
+ * @author Mathieu Chataigner <mathieu.chataigner@gmail.com>
  */
-public class EasyCompta 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
-    }
+public class EasyCompta {
+	public static void main(String[] args) {
+		System.out.println("Hello World!");
+	}
 }

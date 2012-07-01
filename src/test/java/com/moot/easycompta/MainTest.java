@@ -6,7 +6,5 @@ public class MainTest {
 
 	@Test
 	public void testMain() {
-		//fail("Not yet implemented");
 	}
-
 }
