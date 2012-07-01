@@ -6,6 +6,10 @@ package com.moot.easycompta.persistance;
 
 import static com.moot.easycompta.MyLogger.warn;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,7 +25,18 @@ import com.moot.easycompta.VendorFactory;
 public class Factory {
     private static Map<String,Person> persons=new HashMap<>();
     private static Map<String,Vendor> vendors=new HashMap<>();
+    
     private static VendorFactory vFactory=VendorFactory.getFactory();
+    
+    public static Map<String, Person> getPersons() {
+		return persons;
+	}
+
+    public static Map<String, Vendor> getVendors() {
+		return vendors;
+	}
+    
+    
     public static Person getPerson(String name,String surname)
     {
         Person p= persons.get(name+"."+surname);
@@ -53,4 +68,29 @@ public class Factory {
         catch(Exception e){}
     }
     
+    
+    public static void loadFromStream(InputStream is)
+    {
+    	
+    	
+    	
+    }
+    
+    public static void loadFromFile(String name) throws IOException
+    {
+    	try(BufferedReader reader = new BufferedReader(new FileReader(name)))
+    	{
+    		String line="";
+    		while(reader.ready()&&(line=reader.readLine())!=null && !line.isEmpty())
+    		{
+    			String[] split = line.split(":");
+    			switch(split[0])
+    			{
+    			
+    			}
+    		}
+    	}
+    	
+    	
+    }
 }
