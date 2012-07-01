@@ -16,6 +16,7 @@ public class Main {
     
     public static void main(String[] args) throws Exception
     {
+    	
         BasicConfigurator.configure();
         logger.info("start application");
         Person p=new Person("Mathieu","Chataigner");
