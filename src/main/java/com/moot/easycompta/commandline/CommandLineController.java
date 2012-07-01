@@ -8,7 +8,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import com.moot.easycompta.persistance.Factory;
+import com.moot.easycompta.persistance.Loader;
 /**
  *
  * @author Mathieu Chataigner <mathieu.chataigner@gmail.com>
@@ -40,9 +40,9 @@ public class CommandLineController {
         
         switch(lineItems[0])
         {
-            case "Person":Factory.getPerson(lineItems[1],lineItems[2]);break;
-            case "Vendor":Factory.getVendor(lineItems[1]);break;
-            case "PersonalAccount":Factory.createPersonalAccount(lineItems[1], lineItems[2], Double.parseDouble(lineItems[3]));break;
+            case "Person":Loader.getPerson(lineItems[1],lineItems[2]);break;
+            case "Vendor":Loader.getVendor(lineItems[1]);break;
+            case "PersonalAccount":Loader.createPersonalAccount(lineItems[1], lineItems[2], Double.parseDouble(lineItems[3]));break;
             case "Deal":
             default:break;
         }

@@ -22,7 +22,7 @@ import com.moot.easycompta.VendorFactory;
  *
  * @author Mathieu Chataigner <mathieu.chataigner@gmail.com>
  */
-public class Factory {
+public class Loader {
     private static Map<String,Person> persons=new HashMap<>();
     private static Map<String,Vendor> vendors=new HashMap<>();
     
@@ -86,7 +86,16 @@ public class Factory {
     			String[] split = line.split(":");
     			switch(split[0])
     			{
-    			
+    			case "Person":
+    				String[] elems = split[1].split(",");
+    				
+    				break;
+    			case "PersonnalAccount":
+    				break;
+    			case "Vendor":
+    				break;
+    			case "Deal":
+    				break;
     			}
     		}
     	}
