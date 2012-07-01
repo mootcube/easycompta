@@ -4,9 +4,8 @@
  */
 package com.moot.easycompta;
 
-import org.apache.log4j.Logger;
 import org.apache.log4j.BasicConfigurator;
-import com.moot.easycompta.commandline.CommandLineController;
+import org.apache.log4j.Logger;
 
 /**
  *
@@ -21,7 +20,7 @@ public class Main {
         logger.info("start application");
         Person p=new Person("Mathieu","Chataigner");
         logger.info(p);
-        AbstractVendorFactory vFactory=new VendorFactory();
+        AbstractVendorFactory vFactory=VendorFactory.getFactory();
         logger.info(vFactory);
         Vendor v=vFactory.createVendor("starbucks");
         logger.info(v);

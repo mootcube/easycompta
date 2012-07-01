@@ -4,12 +4,11 @@
  */
 package com.moot.easycompta.commandline;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import com.moot.easycompta.*;
+
+import com.moot.easycompta.persistance.Factory;
 /**
  *
  * @author Mathieu Chataigner <mathieu.chataigner@gmail.com>

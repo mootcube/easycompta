@@ -4,12 +4,11 @@
  */
 package com.moot.easycompta;
 
-import java.util.ArrayList;
+import static com.moot.easycompta.MyLogger.warn;
+
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import static com.moot.easycompta.MyLogger.*;
 
 /**
  *
@@ -21,7 +20,7 @@ public class Person implements Actor{
     
     private Map<String,PersonalAccount> accounts=new HashMap<>();
     
-    protected Person(String name,String surname)
+    public Person(String name,String surname)
     {
         this.name=name+"."+surname;
     }

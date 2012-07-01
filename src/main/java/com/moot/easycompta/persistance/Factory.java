@@ -2,12 +2,17 @@
  * 
  * 
  */
-package com.moot.easycompta;
+package com.moot.easycompta.persistance;
 
-import java.util.Date;
+import static com.moot.easycompta.MyLogger.warn;
+
 import java.util.HashMap;
 import java.util.Map;
-import static com.moot.easycompta.MyLogger.*;
+
+import com.moot.easycompta.Person;
+import com.moot.easycompta.PersonalAccount;
+import com.moot.easycompta.Vendor;
+import com.moot.easycompta.VendorFactory;
 
 /**
  *
@@ -16,7 +21,7 @@ import static com.moot.easycompta.MyLogger.*;
 public class Factory {
     private static Map<String,Person> persons=new HashMap<>();
     private static Map<String,Vendor> vendors=new HashMap<>();
-    private static VendorFactory vFactory=new VendorFactory();
+    private static VendorFactory vFactory=VendorFactory.getFactory();
     public static Person getPerson(String name,String surname)
     {
         Person p= persons.get(name+"."+surname);

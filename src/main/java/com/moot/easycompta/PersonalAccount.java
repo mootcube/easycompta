@@ -4,8 +4,6 @@
  */
 package com.moot.easycompta;
 
-import java.util.Objects;
-
 /**
  *
  * @author Mathieu Chataigner <mathieu.chataigner@gmail.com>

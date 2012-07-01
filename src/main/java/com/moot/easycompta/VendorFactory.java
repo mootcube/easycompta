@@ -14,6 +14,15 @@ public class VendorFactory implements AbstractVendorFactory{
     
     private static HashMap<String,Vendor> vendors=new HashMap<>();
     
+    private static final VendorFactory factory=new VendorFactory();
+    
+    private VendorFactory(){}
+    
+    public static VendorFactory getFactory() {
+		return factory;
+	}
+    
+    
     @Override
     public Vendor createVendor(String name) {
         if(name==null || name.trim().isEmpty())return null;

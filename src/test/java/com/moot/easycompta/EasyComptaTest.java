@@ -1,11 +1,9 @@
 package com.moot.easycompta;
 
-//import junit.framework.Test;
-//import junit.framework.TestCase;
-//import junit.framework.TestSuite;
+
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  * Unit test for simple App.
