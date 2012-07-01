@@ -4,7 +4,7 @@
 
   <groupId>com.moot.easycompta</groupId>
   <artifactId>easycompta</artifactId>
-  <version>0.1-SNAPSHOT</version>
+  <version>0.1b</version>
   <packaging>jar</packaging>
 
   <name>easycompta</name>
@@ -72,6 +72,13 @@
 	</configuration>
       </plugin>
     </plugins>
+
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
   </build>
 
 </project>
