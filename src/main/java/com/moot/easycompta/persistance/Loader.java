@@ -36,20 +36,26 @@ public class Loader {
 		return vendors;
 	}
     
+    protected static void reset()
+    {
+    	persons=new HashMap<>();
+    	vendors=new HashMap<>();
+    }
+    
     
     public static Person getPerson(String name,String surname)
     {
         Person p= persons.get(name+"."+surname);
-        if(p==null)
-            persons.put(name+"."+surname, p=new Person(name,surname));
+//        if(p==null)
+//            persons.put(name+"."+surname, p=new Person(name,surname));
         return p;
     }
     
     public static Vendor getVendor(String id)
     {
         Vendor v=vendors.get(id);
-        if(v==null)
-            vendors.put(id, v=vFactory.createVendor(id));
+//        if(v==null)
+//            vendors.put(id, v=vFactory.createVendor(id));
         return v;
     }
     
