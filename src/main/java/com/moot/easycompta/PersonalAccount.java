@@ -30,8 +30,7 @@ public class PersonalAccount extends BasicAccount implements Account {
 		if (!(o instanceof PersonalAccount))
 			return false;
 		PersonalAccount cast = (PersonalAccount) o;
-		return cast.getOwner().equals(this.getOwner())
-				&& cast.getId().equals(this.getId());
+		return cast.getOwner().equals(this.getOwner()) && cast.getId().equals(this.getId());
 	}
 
 	@Override

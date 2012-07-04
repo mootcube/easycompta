@@ -4,8 +4,9 @@
  */
 package com.moot.easycompta;
 
-import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
+
+import com.moot.easycompta.commandline.CommandLineController;
 
 /**
  * 
@@ -16,23 +17,25 @@ public class Main {
 
 	public static void main(String[] args) throws Exception {
 
-		BasicConfigurator.configure();
-		logger.info("start application");
-		Person p = new Person("Mathieu", "Chataigner");
-		logger.info(p);
-		AbstractVendorFactory vFactory = VendorFactory.getFactory();
-		logger.info(vFactory);
-		Vendor v = vFactory.createVendor("starbucks");
-		logger.info(v);
-		PersonalAccount pa = new PersonalAccount("cash", p);
-		p.addAccount(pa);
-		logger.info(pa);
-		logger.info("pa amount " + pa.getAmount());
-		Deal d1 = new Buy(pa, v, 5);
-		logger.info(d1.getId());
-		d1.processDeal();
-		d1 = new Buy(pa, v, 5);
-		logger.info(d1.getId());
+		CommandLineController c = new CommandLineController(null);
+		c.run();
+		// BasicConfigurator.configure();
+		// logger.info("start application");
+		// Person p = new Person("Mathieu", "Chataigner");
+		// logger.info(p);
+		// AbstractVendorFactory vFactory = VendorFactory.getFactory();
+		// logger.info(vFactory);
+		// Vendor v = vFactory.createVendor("starbucks");
+		// logger.info(v);
+		// PersonalAccount pa = new PersonalAccount("cash", p);
+		// p.addAccount(pa);
+		// logger.info(pa);
+		// logger.info("pa amount " + pa.getAmount());
+		// Deal d1 = new Buy(pa, v, 5);
+		// logger.info(d1.getId());
+		// d1.processDeal();
+		// d1 = new Buy(pa, v, 5);
+		// logger.info(d1.getId());
 
 		/*
 		 * add a GUI in swing and CLI add textloader add bin loader

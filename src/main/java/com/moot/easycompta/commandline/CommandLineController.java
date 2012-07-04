@@ -4,7 +4,7 @@
  */
 package com.moot.easycompta.commandline;
 
-import java.io.BufferedReader;
+import java.io.Console;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
@@ -16,40 +16,49 @@ import com.moot.easycompta.persistance.Loader;
  */
 public class CommandLineController {
 
-	private final BufferedReader is;
+	// private final BufferedReader is;
 
 	public CommandLineController(InputStreamReader is) throws IOException {
-		this.is = new BufferedReader(is);
+		// this.is = new BufferedReader(is);
 	}
 
 	public void run() throws IOException {
 		String buf;
-		while ((buf = is.readLine()) != null) {
-			process(buf);
+		// while ((buf = is.readLine()) != null) {
+		// process(buf);
+		// }
+		Console c = System.console();
+		while ((buf = c.readLine()) != null) {
+			try {
+				System.out.println(Loader.parseLine(buf));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 
-	private void process(String line) {
-
-		if (line == null || (line = line.trim()).isEmpty())
-			return;
-
-		String[] lineItems = line.split(" *");
-
-		switch (lineItems[0]) {
-		case "Person":
-			Loader.getPerson(lineItems[1], lineItems[2]);
-			break;
-		case "Vendor":
-			Loader.getVendor(lineItems[1]);
-			break;
-		case "PersonalAccount":
-			Loader.createPersonalAccount(lineItems[1], lineItems[2],
-					Double.parseDouble(lineItems[3]));
-			break;
-		case "Deal":
-		default:
-			break;
-		}
-	}
+	// private void process(String line) {
+	//
+	// if (line == null || (line = line.trim()).isEmpty())
+	// return;
+	//
+	// String[] lineItems = line.split(" *");
+	//
+	// switch (lineItems[0]) {
+	// case "Person":
+	// Loader.getPerson(lineItems[1], lineItems[2]);
+	// break;
+	// case "Vendor":
+	// Loader.getVendor(lineItems[1]);
+	// break;
+	// case "PersonalAccount":
+	// Loader.createPersonalAccount(lineItems[1], lineItems[2],
+	// Double.parseDouble(lineItems[3]));
+	// break;
+	// case "Deal":
+	// default:
+	// break;
+	// }
+	// }
 }
